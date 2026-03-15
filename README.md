@@ -83,33 +83,27 @@ backgammon-AI-taller4
 
 README.md
 
-src
+## Estructura del proyecto
 
-└── backgammon
-
-Main.java
-
-Game.java
-
-Board.java
-
-Player.java
-
-Move.java
-
-Dice.java
-
-State.java
-
-Minimax.java
-
-Heuristic.java
-
-docs
-
-images
-
----
+```
+backgammon-AI-taller4
+│
+├── README.md
+├── src
+│   └── backgammon
+│       ├── Main.java
+│       ├── Game.java
+│       ├── Board.java
+│       ├── Player.java
+│       ├── Move.java
+│       ├── Dice.java
+│       ├── State.java
+│       ├── Minimax.java
+│       └── Heuristic.java
+│
+├── docs
+└── images
+```
 
 ## ⚙️ Tecnologías utilizadas
 
