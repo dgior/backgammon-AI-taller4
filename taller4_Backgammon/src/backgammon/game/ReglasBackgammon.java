@@ -31,18 +31,19 @@ public class ReglasBackgammon {
 
         // Verificar que hay ficha propia en origen
         int fichaEnOrigen = estado.getCasilla(origen);
-        if (turnoIA && fichaEnOrigen <= 0) return false; // IA debe tener fichas positivas
-        if (!turnoIA && fichaEnOrigen >= 0) return false; // Humano debe tener fichas negativas
+        if (turnoIA && fichaEnOrigen <= 0) return false;
+        if (!turnoIA && fichaEnOrigen >= 0) return false;
 
         // Verificar que el destino es alcanzable con el dado
         int direccion = turnoIA ? Constantes.DIR_IA : Constantes.DIR_HUMANO;
         if (destino != origen + (dado * direccion)) return false;
 
-        // Verificar que el destino no está bloqueado
+        // Verificar que el destino no está bloqueado (2 o más fichas rivales)
         int fichasEnDestino = estado.getCasilla(destino);
-        if (turnoIA && fichasEnDestino < -1) return false; // Más de 1 ficha humana bloquea
-        if (!turnoIA && fichasEnDestino > 1) return false; // Más de 1 ficha IA bloquea
+        if (turnoIA && fichasEnDestino < -1) return false; // 2 o más fichas negras bloquean
+        if (!turnoIA && fichasEnDestino > 1) return false; // 2 o más fichas blancas bloquean
 
+        // Si hay 1 ficha rival, es capturable (válido)
         return true;
     }
 
@@ -117,22 +118,40 @@ public class ReglasBackgammon {
             int fichasOrigen = estado.getCasilla(origen);
             int fichasDestino = estado.getCasilla(destino);
 
-            // Verificar captura
-            if (turnoIA && fichasDestino == -1) {
-                // IA captura ficha humana
-                estado.setFichasCapIA(estado.getFichasCapIA() + 1);
-                jugada.setEsCaptura(true);
-                fichasDestino = 0;
-            } else if (!turnoIA && fichasDestino == 1) {
-                // Humano captura ficha IA
-                estado.setFichasCapHum(estado.getFichasCapHum() + 1);
-                jugada.setEsCaptura(true);
-                fichasDestino = 0;
+            // RESTAR FICHA DEL ORIGEN PRIMERO
+            if (turnoIA) {
+                estado.setCasilla(origen, fichasOrigen - 1);
+            } else {
+                estado.setCasilla(origen, fichasOrigen + 1); // +1 porque es negativo
             }
 
-            // Mover ficha
-            estado.setCasilla(origen, fichasOrigen - (turnoIA ? 1 : -1));
-            estado.setCasilla(destino, fichasDestino + (turnoIA ? 1 : -1));
+            // VERIFICAR CAPTURA ANTES DE SUMAR AL DESTINO
+            if (turnoIA && fichasDestino == -1) {
+                // IA captura ficha humana (una sola ficha negra)
+                System.out.println("DEBUG - IA captura ficha humana en casilla " + destino);
+                estado.setFichasCapIA(estado.getFichasCapIA() + 1);
+                jugada.setEsCaptura(true);
+                // La ficha humana desaparece, se pone la ficha IA
+                estado.setCasilla(destino, 1);
+            } else if (!turnoIA && fichasDestino == 1) {
+                // Humano captura ficha IA (una sola ficha blanca)
+                System.out.println("DEBUG - Humano captura ficha IA en casilla " + destino);
+                estado.setFichasCapHum(estado.getFichasCapHum() + 1);
+                jugada.setEsCaptura(true);
+                // La ficha IA desaparece, se pone la ficha humana
+                estado.setCasilla(destino, -1);
+            } else {
+                // Movimiento normal sin captura
+                if (turnoIA) {
+                    estado.setCasilla(destino, fichasDestino + 1);
+                } else {
+                    estado.setCasilla(destino, fichasDestino - 1);
+                }
+            }
         }
+
+        // VERIFICACIÓN después del movimiento
+        System.out.println("DEBUG - Después de movimiento:");
+        estado.verificarTotalFichas();
     }
 }

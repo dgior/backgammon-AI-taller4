@@ -163,7 +163,7 @@ public class JuegoBackgammon {
         System.out.println("─".repeat(90));
 
         // Fila superior (12-23) - Números de casilla
-        System.out.println("\n       12     13     14     15     16     17    │   18     19     20     21     22     23");
+        System.out.println("\n        12        13       14       15       16        17       │      18        19       20       21       22       23");
         System.out.print("     ");
 
         // Casillas 12-17
@@ -184,7 +184,7 @@ public class JuegoBackgammon {
         System.out.println("    ───────────────────────────────────────────┼───────────────────────────────────────────");
 
         // Fila inferior (11-0) - Números de casilla
-        System.out.println("\n       11     10     9      8      7      6    │   5      4      3      2      1      0");
+        System.out.println("\n        11        10       9        8        7         6        │       5         4        3        2        1        0");
         System.out.print("     ");
 
         // Casillas 11-6
