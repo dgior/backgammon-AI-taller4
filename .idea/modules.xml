@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/backgammon-AI-taller4.iml" filepath="$PROJECT_DIR$/.idea/backgammon-AI-taller4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backgammon/ai/demo/demo.iml" filepath="$PROJECT_DIR$/backgammon/ai/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taller4_Backgammon/taller4_Backgammon.iml" filepath="$PROJECT_DIR$/taller4_Backgammon/taller4_Backgammon.iml" />
+    </modules>
+  </component>
+</project>
