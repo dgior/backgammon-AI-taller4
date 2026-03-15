@@ -1,5 +1,7 @@
 <h1 align="center">🎲 Backgammon IA — Algoritmo MinMax (Java)</h1>
-
+<p align="center">
+  <img src="images/tableroBac.jpg" width="600">
+</p>
 <p align="center">
 Proyecto académico de Inteligencia Artificial que implementa el algoritmo MinMax para el juego de Backgammon utilizando Java y programación orientada a objetos.
 </p>
