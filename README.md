@@ -33,10 +33,15 @@ Estructura conceptual del árbol de búsqueda:
 
 MAX
 ├─ MIN
+
 │  ├─ H
+
 │  └─ H
+
 └─ MIN
+
 ├─ H
+
 └─ H
 
 Donde:
@@ -82,14 +87,23 @@ README.md
 
 src
 └── backgammon
+
 Main.java
+
 Game.java
+
 Board.java
+
 Player.java
+
 Move.java
+
 Dice.java
+
 State.java
+
 Minimax.java
+
 Heuristic.java
 
 docs
