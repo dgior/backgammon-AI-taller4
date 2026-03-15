@@ -138,6 +138,7 @@ java Main
 ## 🎓 Curso
 
 Pontificia Universidad Javeriana
+
 Introducción Inteligencia Artificial
 
 Taller Calificable 4 — Juegos
