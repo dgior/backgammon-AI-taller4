@@ -33,6 +33,7 @@ El jugador IA utiliza el **algoritmo MinMax** con una profundidad de búsqueda d
 
 Estructura conceptual del árbol de búsqueda:
 
+```
 MAX
 ├── MIN
 │   ├── H
@@ -40,6 +41,7 @@ MAX
 └── MIN
     ├── H
     └── H
+```
 Donde:
 
 * **MAX** representa el turno de la IA que intenta maximizar la puntuación
