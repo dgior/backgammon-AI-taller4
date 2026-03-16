@@ -128,14 +128,14 @@ public class ReglasBackgammon {
             // VERIFICAR CAPTURA ANTES DE SUMAR AL DESTINO
             if (turnoIA && fichasDestino == -1) {
                 // IA captura ficha humana (una sola ficha negra)
-                System.out.println("DEBUG - IA captura ficha humana en casilla " + destino);
+                // System.out.println("DEBUG - IA captura ficha humana en casilla " + destino);
                 estado.setFichasCapIA(estado.getFichasCapIA() + 1);
                 jugada.setEsCaptura(true);
                 // La ficha humana desaparece, se pone la ficha IA
                 estado.setCasilla(destino, 1);
             } else if (!turnoIA && fichasDestino == 1) {
                 // Humano captura ficha IA (una sola ficha blanca)
-                System.out.println("DEBUG - Humano captura ficha IA en casilla " + destino);
+                // System.out.println("DEBUG - Humano captura ficha IA en casilla " + destino);
                 estado.setFichasCapHum(estado.getFichasCapHum() + 1);
                 jugada.setEsCaptura(true);
                 // La ficha IA desaparece, se pone la ficha humana
@@ -149,9 +149,5 @@ public class ReglasBackgammon {
                 }
             }
         }
-
-        // VERIFICACIÓN después del movimiento
-        System.out.println("DEBUG - Después de movimiento:");
-        estado.verificarTotalFichas();
     }
 }
