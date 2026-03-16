@@ -15,7 +15,7 @@ Proyecto académico de Inteligencia Artificial que implementa el algoritmo MinMa
 
 ---
 
-## 📖 Sobre el proyecto
+## Sobre el proyecto
 
 Este proyecto implementa una versión simplificada del juego **Backgammon** utilizando **programación orientada a objetos en Java**.
 
@@ -27,7 +27,7 @@ Cuando se alcanza la profundidad máxima de búsqueda, el algoritmo evalúa el e
 
 ---
 
-## 🧠 Algoritmo de IA
+## Algoritmo de IA
 
 El jugador IA utiliza el **algoritmo MinMax** con una profundidad de búsqueda de **dos niveles**.
 
@@ -41,6 +41,10 @@ MAX
 └── MIN
     ├── H
     └── H
+|
+.
+.
+.
 ```
 Donde:
 
@@ -52,7 +56,7 @@ El algoritmo analiza posibles movimientos futuros y selecciona la acción que co
 
 ---
 
-## 🎯 Requisitos del proyecto
+## Requisitos del proyecto
 
 La implementación incluye los siguientes componentes solicitados en el taller:
 
@@ -92,20 +96,23 @@ backgammon-AI-taller4
 ├── src
 │   └── backgammon
 │       ├── Main.java
-│       ├── Game.java
-│       ├── Board.java
-│       ├── Player.java
-│       ├── Move.java
-│       ├── Dice.java
-│       ├── State.java
-│       ├── Minimax.java
-│       └── Heuristic.java
+│       ├── model
+│       │   ├── Constantes.java
+│       │   ├── EstadoJuego.java
+│       │   └── Jugada.java
+│       ├── game
+│       │   ├── JuegoBackgammon.java
+│       │   ├── ReglasBackgammon.java
+│       │   └── MovimientosValidos.java
+│       └── ai
+│           ├── MinMax.java
+│           └── Heuristica.java
 │
 ├── docs
 └── images
 ```
 
-## ⚙️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 Java
 Programación Orientada a Objetos
@@ -114,7 +121,7 @@ Git
 
 ---
 
-## 🚀 Cómo ejecutar el proyecto
+## Cómo ejecutar el proyecto
 
 Clonar el repositorio
 
@@ -126,11 +133,11 @@ cd backgammon-AI-taller4
 
 Compilar los archivos
 
-javac *.java
+javac -d out src/backgammon/**/*.java src/backgammon/Main.java
 
 Ejecutar el programa
 
-java Main
+java -cp out backgammon.Main
 
 ---
 
