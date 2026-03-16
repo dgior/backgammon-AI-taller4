@@ -3,7 +3,7 @@
   <img src="images/tableroBac.jpg" width="600">
 </p>
 <p align="center">
-Proyecto académico de Inteligencia Artificial que implementa el algoritmo MinMax para el juego de Backgammon utilizando Java y programación orientada a objetos.
+Taller que implementa el algoritmo MinMax para el juego de Backgammon utilizando Java y programación orientada a objetos.
 </p>
 
 <p align="center">
